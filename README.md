@@ -14,4 +14,3 @@ Abdelrahman Tarek --> You touch my food I kill you
 
 * **Zeyad Zaky** - ID: 37-0521
 * **Anwar Labib** - ID:37-4549
-* **Abdelrahman Tarek** - ID:37-8080
