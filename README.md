@@ -1,4 +1,4 @@
-![Logo](team15-logo.jpg) 
+﻿![Logo](team15-logo.jpg) 
 # Github - Sprint 0 
 
 ## About 
@@ -8,6 +8,9 @@ Zeyad Zaky -> ☕, 💻, 💤,  🔁
 
 Anwar Labib -> Lives to code
 
+Maggie Ezzat -> I love pizza!
+
 ## Authors
 
 * **Zeyad Zaky** - ID: 37-0521
+* **Maggie Ezzat** -ID: 37-575
