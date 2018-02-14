@@ -12,15 +12,14 @@ Anwar Labib -> Lives to code
 
 Abdelrahman Tarek --> You touch my food I kill you
 
-Fady Sameh -> Football, Coding
-
 AHMED Samir Morsy -> Fifa(PS4) , gaming ,Unity
+Peter Agayby -> How you doin?
 
 ## Authors
 
 * **Bishoy Farid** - ID: 37-8584
 * **Zeyad Zaky** - ID: 37-0521
 * **Anwar Labib** - ID:37-4549
-* **Abdelrahman Tarek** - ID:37-8080
-* **Fady Sameh** - ID:37-2062
+* **Abdelrahman Tarek** - ID:37-8080 (Branch)
 * **Ahmed Samir Morsy** - ID:37-11869
+* **Peter Agayby** - ID: 37-715
