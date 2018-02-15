@@ -18,10 +18,21 @@ Peter Agayby -> How you doin?
 
 Maggie Ezzat -> I love pizza!
 
-Mohamed Hesham -> Winter is Coming
+Mohamed Hesham -> Winter is Coming❄
 
 Youssef Salah -> consistency
 
 Doaa Samer -> Memes ❤️
 
 ## Authors
+
+Mohamed Hesham -> Winter is Coming ❄
+
+Youssef Salah -> Consistency
+
+## Authors
+
+* **Zeyad Zaky** - ID: 37-0521
+* **Maggie Ezzat** -ID: 37-575
+* **Youssef Salah** -ID: 37-3779
+* **Mohamed Hesham** -ID 37-6132
