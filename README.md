@@ -26,7 +26,7 @@ Doaa Samer -> Memes ❤️
 
 Omar Elmoghazy -> P.T. Barnum 
 
-Mostafa Amer -> Canada ❤️
+Mostafa Amer -> Canada ❤️ 
 
 ## Authors
 
