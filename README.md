@@ -1,4 +1,4 @@
-﻿
+
 ﻿![Logo](team15-logo.jpg)
 # Github - Sprint 0
 
@@ -32,6 +32,8 @@ Mostafa Amer -> Canada ❤️
 Shadi Barghash -> Software Engineering, Music, Aviation, Horses <3
 
 Aya Waleed -> Friends❤️
+
+Daniel Ashraf -> 37-3089 -> life
 
 ## Authors
 
