@@ -26,13 +26,5 @@ Doaa Samer -> Memes ❤️
 
 ## Authors
 
-Mohamed Hesham -> Winter is Coming ❄
-
-Youssef Salah -> Consistency
-
-## Authors
-
-* **Zeyad Zaky** - ID: 37-0521
-* **Maggie Ezzat** -ID: 37-575
-* **Youssef Salah** -ID: 37-3779
-* **Mohamed Hesham** -ID 37-6132
+Don't add anything here!
+Navigate to your component's branch and add your name there. Do not merge afterwards.
