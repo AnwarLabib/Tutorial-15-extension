@@ -24,6 +24,8 @@ Youssef Salah -> consistency
 
 Doaa Samer -> Memes ❤️
 
+Omar Elmoghazy -> P.T. Barnum 
+
 ## Authors
 
 Don't add anything here!
