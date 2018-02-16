@@ -16,10 +16,12 @@ Youssef Salah -> Consistency
 
 Mostafa Amer -> Canada ❤️
 
+Mariz Awad -> gotta git git git
+
 ## Authors
 
 * **Zeyad Zaky** - ID: 37-0521
 * **Maggie Ezzat** -ID: 37-575
 * **Youssef Salah** -ID: 37-3779
 * **Mostafa Amer** -ID: 37-1182
-
+* **Mariz Awad** -ID: 37-2632
