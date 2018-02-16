@@ -7,6 +7,8 @@ This is T15's Repository (GUC) and it holds the SE project (GUC NAVIGATION APP) 
 
 Bishoy Farid --> Books, Coding
 
+Fady Sameh -> Football, coding
+
 Zeyad Zaky -> ☕, 💻, 💤,  🔁
 
 Anwar Labib -> Lives to code
@@ -25,9 +27,9 @@ Youssef Salah -> consistency
 
 Doaa Samer -> Memes ❤️
 
-Omar Elmoghazy -> P.T. Barnum 
+Omar Elmoghazy -> P.T. Barnum
 
-Mostafa Amer -> Canada ❤️ 
+Mostafa Amer -> Canada ❤️
 
 Shadi Barghash -> Software Engineering, Music, Aviation, Horses <3
 
@@ -43,14 +45,3 @@ Mariz Awad -> gotta git git git
 
 Don't add anything here!
 Navigate to your component's branch and add your name there. Do not merge afterwards.
-
-
-
-
-
-
-* **Zeyad Zaky** - ID: 37-0521
-* **Maggie Ezzat** -ID: 37-575
-* **Youssef Salah** -ID: 37-3779
-* **Mostafa Amer** -ID: 37-1182
-* **Mariz Awad** -ID: 37-2632
