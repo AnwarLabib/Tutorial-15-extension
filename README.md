@@ -1,4 +1,4 @@
-
+﻿
 ﻿![Logo](team15-logo.jpg)
 # Github - Sprint 0
 
@@ -41,7 +41,7 @@ Mostafa Amer -> Canada ❤️
 
 Mariz Awad -> gotta git git git
 
-Amr Saadi -> SE <3 :)
+Amr Saadi -> SE <3 :).
 
 Marwan Sami Youssef -> No SE it's only House and Techno
 
