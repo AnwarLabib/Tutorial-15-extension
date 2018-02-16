@@ -35,6 +35,10 @@ Aya Waleed -> Friends❤️
 
 Daniel Ashraf -> 37-3089 -> life
 
+Mostafa Amer -> Canada ❤️
+
+Mariz Awad -> gotta git git git
+
 ## Authors
 
 Don't add anything here!
@@ -44,3 +48,9 @@ Navigate to your component's branch and add your name there. Do not merge afterw
 
 
 
+
+* **Zeyad Zaky** - ID: 37-0521
+* **Maggie Ezzat** -ID: 37-575
+* **Youssef Salah** -ID: 37-3779
+* **Mostafa Amer** -ID: 37-1182
+* **Mariz Awad** -ID: 37-2632
