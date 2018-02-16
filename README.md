@@ -45,6 +45,8 @@ Amr Saadi -> SE <3
 
 Marwan Sami Youssef -> No SE it's only House and Techno
 
+Badr mahmoud -> mat5alasooona b2a min el hisa dee
+
 ## Authors
 
 Don't add anything here!
