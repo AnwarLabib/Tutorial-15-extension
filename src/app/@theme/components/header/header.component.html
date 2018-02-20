@@ -12,6 +12,8 @@
 
 <nb-actions size="medium" class="header-container right">
   <nb-action>
-    <nb-user [menu]="userMenu" [name]="user?.username" (menuClick)="onMenuClick($event)"></nb-user>
+    <nb-user *ngIf="user" [menu]="userMenu" [name]="user?.username" (menuClick)="onMenuClick($event)"></nb-user>
+    <a *ngIf="!user" class="btn btn-success" [routerLink]="['register']">Register</a>
+    <a *ngIf="!user" class="btn btn-success" style="margin-left:10px" [routerLink]="['login']">Login</a>
   </nb-action>
 </nb-actions>
