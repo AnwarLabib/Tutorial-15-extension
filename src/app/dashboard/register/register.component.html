@@ -1,3 +1,38 @@
-<p>
-  register works!
-</p>
+<div *ngIf="!username; else forminfo">
+<form [formGroup]="regForm" (ngSubmit)="userinfo(regForm.value)">
+  <h1>
+    Register Form
+  </h1>
+
+  <br>
+  <br>
+  <br>
+  <label> Username
+    <input type="text" formControlName="username">
+  </label>
+    <br>
+
+  <div class="req" *ngIf="!regForm.controls['username'].valid && regForm.controls['username'].touched ">{{user_req}}</div>
+  <label> Password
+    <input type="password" formControlName="password">
+  </label>
+    <br>
+  <div class="req" *ngIf="!regForm.controls['password'].valid && regForm.controls['password'].touched ">{{pass_req}}</div>
+
+  <label> Confirm Password
+    <input type="password" formControlName="cpassword">
+  </label>
+    <br>
+  <div class="req" *ngIf="!regForm.controls['cpassword'].valid && regForm.controls['cpassword'].touched ">{{pass_req}}</div>
+  <div class="req" *ngIf="regForm.get('password').value != regForm.get('cpassword').value && regForm.get('cpassword').value != null">{{passdm}}</div>
+  <br>
+  <input type="submit" value="Register" [disabled]="!regForm.valid"  >
+
+</form>
+</div>
+<ng-template #forminfo>
+  <h1>
+    Thank you for registering {{username}}
+  </h1>
+</ng-template>
+
