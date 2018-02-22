@@ -10,6 +10,10 @@ const routes: Routes = [
     component: DashboardComponent,
     children: [
       {
+        path: 'people',
+        loadChildren: './people/people.module#PeopleModule'
+      },
+      {
         path: 'items',
         loadChildren: './items/items.module#ItemsModule'
       },
@@ -18,12 +22,8 @@ const routes: Routes = [
       },
       {
         path : 'register' , loadChildren : './register/register.module#RegisterModule'
-      },
-      {
-        path: '',
-        redirectTo: 'items',
-        pathMatch: 'full'
       }
+
     ]
   }
 ];
