@@ -5,7 +5,7 @@
 
     <br>
     <br>
-
+       <div class="req" *ngIf="logForm.get('username').value == 'ahmed' ">wrong username</div>
     <label> Username
       <input type="text" formControlName="username" class="form-control">
     </label>
@@ -19,7 +19,7 @@
     <br>
     <div class="req" *ngIf="!logForm.controls['password'].valid && logForm.controls['password'].touched ">{{req}}</div>
      <br>
-    <input type="submit" value="login" [disabled]="!logForm.valid" class="form-control">
+    <input type="submit"  value="login" [disabled]="!logForm.valid" class="form-control" >
 
     </form>
 
