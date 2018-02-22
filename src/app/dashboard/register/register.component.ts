@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {AbstractControl,FormBuilder, FormGroup,Validators} from "@angular/forms";
+import {AbstractControl, FormBuilder, FormGroup, Validator, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-register',
@@ -21,9 +21,8 @@ export class RegisterComponent implements OnInit {
         'username' : [null, Validators.required],
         'password' : [null, Validators.required],
            // Validators.pattern(/^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{4,20}/),
-        'cpassword' : [null, Validators.required],
-        validator: this.passwordConfirming
-    });
+        'cpassword' : [null, Validators.required]
+    },{validator: this.passwordConfirming});
 
   }
 
@@ -36,6 +35,11 @@ export class RegisterComponent implements OnInit {
             return {invalid: true};
         }
     }
+
+    showPassword(input: any): any {
+        input.type = input.type === 'password' ?  'text' : 'password';
+    }
+
   userinfo(register){
       this.username=register.username;
       this.password=register.password;

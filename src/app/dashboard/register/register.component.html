@@ -8,25 +8,28 @@
   <br>
   <br>
   <label> Username
-    <input type="text" formControlName="username">
+    <input type="text" formControlName="username" class="form-control">
   </label>
     <br>
 
   <div class="req" *ngIf="!regForm.controls['username'].valid && regForm.controls['username'].touched ">{{user_req}}</div>
   <label> Password
-    <input type="password" formControlName="password">
+    <input #pass type="password" formControlName="password" class="form-control">
   </label>
     <br>
   <div class="req" *ngIf="!regForm.controls['password'].valid && regForm.controls['password'].touched ">{{pass_req}}</div>
 
   <label> Confirm Password
-    <input type="password" formControlName="cpassword">
+    <input #cpass type="password" formControlName="cpassword" class="form-control">
   </label>
     <br>
   <div class="req" *ngIf="!regForm.controls['cpassword'].valid && regForm.controls['cpassword'].touched ">{{pass_req}}</div>
   <div class="req" *ngIf="regForm.get('password').value != regForm.get('cpassword').value && regForm.get('cpassword').value != null">{{passdm}}</div>
   <br>
-  <input type="submit" value="Register" [disabled]="!regForm.valid"  >
+<input type="checkbox" (change)="showPassword(pass)" (change)="showPassword(cpass)" > show password
+  <br>
+  <br>
+  <input type="submit" value="Register" [disabled]="!regForm.valid " class="form-control">
 
 </form>
 </div>
