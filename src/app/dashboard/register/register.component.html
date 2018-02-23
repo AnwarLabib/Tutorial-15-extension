@@ -1,41 +1,33 @@
-<div *ngIf="!username; else forminfo">
+<div>
 <form [formGroup]="regForm" (ngSubmit)="userinfo(regForm.value)">
-  <h1>
+  <h1 style="margin-bottom:20px;">
     Register Form
   </h1>
 
-  <br>
-  <br>
-  <br>
-  <label> Username
+  <div class="margin10">
+    <label style="font-weight:900"> Username </label>
     <input type="text" formControlName="username" class="form-control">
-  </label>
-    <br>
+  </div>
 
-  <div class="req" *ngIf="!regForm.controls['username'].valid && regForm.controls['username'].touched ">{{user_req}}</div>
-  <label> Password
+  <div class="req" *ngIf="username">This username is already taken.</div>
+  
+  <div class="margin10">
+    <label style="font-weight:900"> Password </label>
     <input #pass type="password" formControlName="password" class="form-control">
-  </label>
-    <br>
-  <div class="req" *ngIf="!regForm.controls['password'].valid && regForm.controls['password'].touched ">{{pass_req}}</div>
-
-  <label> Confirm Password
+  </div>
+  
+  <div class="margin10">
+    <label style="font-weight:900"> Confirm Password </label>
     <input #cpass type="password" formControlName="cpassword" class="form-control">
-  </label>
-    <br>
-  <div class="req" *ngIf="!regForm.controls['cpassword'].valid && regForm.controls['cpassword'].touched ">{{pass_req}}</div>
-  <div class="req" *ngIf="regForm.get('password').value != regForm.get('cpassword').value && regForm.get('cpassword').value != null">{{passdm}}</div>
-  <br>
-<input type="checkbox" (change)="showPassword(pass)" (change)="showPassword(cpass)" > show password
-  <br>
-  <br>
-  <input type="submit" value="Register" [disabled]="!regForm.valid " class="form-control">
+  </div>
+  
+  <div class="req margin10" *ngIf="regForm.get('password').value != regForm.get('cpassword').value && regForm.get('cpassword').value != null">{{passdm}}</div>
+  
+  <input style="margin-bottom:20px;" type="checkbox" (change)="showPassword(pass)" (change)="showPassword(cpass)" > 
+  <label style="font-weight:900">Show Password</label> 
+  
+  <input type="submit" value="Register" [disabled]="!regForm.valid " class="form-control btn btn-success">
 
 </form>
 </div>
-<ng-template #forminfo>
-  <h1>
-    Thank you for registering {{username}}
-  </h1>
-</ng-template>
 

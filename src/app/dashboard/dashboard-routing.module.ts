@@ -10,7 +10,7 @@ const routes: Routes = [
     component: DashboardComponent,
     children: [
       {
-        path: 'people',
+        path: '',
         loadChildren: './people/people.module#PeopleModule'
       },
       {

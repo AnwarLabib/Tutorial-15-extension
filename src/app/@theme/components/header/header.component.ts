@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NbMenuService, NbSidebarService } from '@nebular/theme';
 import { Router } from '@angular/router';
+import { UserService } from '../../../user.service';
+import { User } from '../../../user.model';
 
 @Component({
   selector: 'ngx-header',
@@ -11,14 +13,19 @@ export class HeaderComponent implements OnInit {
   @Input() position = 'normal';
   user: any;
   userMenu: any[];
+  srcImage = "assets/T15-logo.png";
 
   constructor(
     private sidebarService: NbSidebarService,
-    private menuService: NbMenuService
+    private menuService: NbMenuService,
+    private userService: UserService 
   ) {}
 
   ngOnInit() {
     this.userMenu = [{ title: 'Logout' }];
+    this.userService.userSubject.subscribe((u:User)=>{
+      this.user = u;
+    });
   }
 
   toggleSidebar(): boolean {
@@ -32,7 +39,12 @@ export class HeaderComponent implements OnInit {
 
   onMenuClick(event) {
     if (event.title === 'Logout') {
-      // Think about what to do ;)
+      this.userService.logout(this.user.token);
     }
   }
+
+  logOut(){
+    this.userService.logout(this.user.token);
+  }
+
 }

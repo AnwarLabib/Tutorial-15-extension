@@ -3,14 +3,11 @@
     <a (click)="toggleSidebar()" class="navigation">
       <i class="nb-menu"></i>
     </a>
-    <div class="logo" (click)="goToHome()">
-     <a href="goToHome()">
-       <img src="./../../../../img/T15-logo.png" alt="tutorial logo">
+    <div class="logo">
+     <a [routerLink]="['']">
+       <img src="{{srcImage}}" alt="Logo" style="max-height:80px;">
      </a>
-      <a href="goToHome()">
-      Angular-
-      <span>Seed-Project</span>
-      </a>
+      <a [routerLink]="['']"> Tutorial 15 </a>
     </div>
   </div>
   <ngx-theme-switcher></ngx-theme-switcher>
@@ -18,8 +15,13 @@
 
 <nb-actions size="medium" class="header-container right">
   <nb-action>
-    <nb-user *ngIf="user" [menu]="userMenu" [name]="user?.username" (menuClick)="onMenuClick($event)"></nb-user>
-    <a *ngIf="!user" class="btn btn-success" [routerLink]="['register']">Register</a>
-    <a *ngIf="!user" class="btn btn-success" style="margin-left:10px" [routerLink]="['login']">Login</a>
-  </nb-action>
+    <nb-user *ngIf="user" [menu]="userMenu" [name]="user?.username" (menuClick)="onMenuClick($event)"></nb-user>    
+    </nb-action>
+    <nb-action style="margin-right:0px;">
+      <a *ngIf="!user" class="btn btn-success" style="margin-left:10px" [routerLink]="['login']">Login</a>
+    </nb-action>
+    <nb-action style="margin-left:0px;">
+      <a *ngIf="!user" class="btn btn-success" [routerLink]="['register']">Register</a>
+    </nb-action>
+    
 </nb-actions>

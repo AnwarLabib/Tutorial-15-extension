@@ -3,23 +3,20 @@
       Login Form
     </h1>
 
-    <br>
-    <br>
-       <div class="req" *ngIf="logForm.get('username').value == 'ahmed' ">wrong username</div>
-    <label> Username
+    <div class="margin20">
+      <label style="font-weight:900">Username</label>
       <input type="text" formControlName="username" class="form-control">
-    </label>
-
-
-    <div class="req" *ngIf="!logForm.controls['username'].valid && logForm.controls['username'].touched ">{{req}}</div>
-    <br>
-     <label> Password
+    </div>
+      
+    <div class="margin20">
+      <label style="font-weight:900">Password</label>
       <input type="password" formControlName="password" class="form-control">
-    </label>
-    <br>
-    <div class="req" *ngIf="!logForm.controls['password'].valid && logForm.controls['password'].touched ">{{req}}</div>
-     <br>
-    <input type="submit"  value="login" [disabled]="!logForm.valid" class="form-control" >
+    </div>
+         
+    <div class="req" *ngIf="failed">Username or Password is incorrect.</div>
+
+
+    <input type="submit"  value="login" [disabled]="!logForm.valid" class="form-control margin20 btn btn-success" >
 
     </form>
 
