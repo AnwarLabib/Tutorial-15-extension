@@ -14,6 +14,11 @@ export class PeopleComponent implements OnInit {
     name: 'Fady Sameh',
     about: 'Loves football and coding',
     imagePath: 'assets/fady.jpg'
+  },
+  {
+    name: 'Abdelrahman Tarek',
+    about: 'I love running, I love food.',
+    imagePath: 'assets/abdelrahmantarek.jpg'
   }
   ];
 
