@@ -3,6 +3,7 @@ import { NbMenuService, NbSidebarService } from '@nebular/theme';
 import { Router } from '@angular/router';
 import { UserService } from '../../../user.service';
 import { User } from '../../../user.model';
+import { ItemsService } from '../../../dashboard/items/items.service';
 
 @Component({
   selector: 'ngx-header',
@@ -18,7 +19,9 @@ export class HeaderComponent implements OnInit {
   constructor(
     private sidebarService: NbSidebarService,
     private menuService: NbMenuService,
-    private userService: UserService 
+    private userService: UserService,
+    private router:Router,
+    private itemService:ItemsService
   ) {}
 
   ngOnInit() {
@@ -40,11 +43,10 @@ export class HeaderComponent implements OnInit {
   onMenuClick(event) {
     if (event.title === 'Logout') {
       this.userService.logout(this.user.token);
+      this.router.navigate(['/dashboard']);
+      this.itemService.items=[];
+      this.itemService.itemSubject.next(this.itemService.items.slice());
     }
-  }
-
-  logOut(){
-    this.userService.logout(this.user.token);
   }
 
 }

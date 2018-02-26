@@ -4,6 +4,7 @@ import { Injectable } from "@angular/core";
 import { Response } from "@angular/http";
 import { User } from "./user.model";
 import { Headers } from "@angular/http";
+import { ItemsService } from "./dashboard/items/items.service";
 
 @Injectable()
 export class UserService{
@@ -12,11 +13,11 @@ export class UserService{
     
     }
     
-    public user:User;
+    public user:User=null;
     public userSubject = new Subject();
 
 
-    register(username:String,password:String){
+    register(username:string,password:string){
         var user = new User(username,password);
 
         return this.http.post('http://localhost:3000/api/user/createUser',user);
@@ -28,10 +29,12 @@ export class UserService{
         .subscribe(()=>{
             this.user = null;
             this.userSubject.next(this.user);
+            // this.itemsService.items = [];
+            // this.itemsService.itemSubject.next(this.itemsService.items);
         });
     }
 
-    logIn(username:String,password:String){
+    logIn(username:string,password:string){
         var user = new User(username,password);
         return this.http.post('http://localhost:3000/api/user/loginUser',user);
     }

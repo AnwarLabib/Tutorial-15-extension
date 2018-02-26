@@ -2,6 +2,7 @@ import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
+import {FilterPipe} from './pipes/filter.pipe';
 
 import {
   NbActionsModule,
@@ -23,7 +24,7 @@ import {
   ThemeSwitcherComponent,
   StatusCardComponent
 } from './components';
-import { CapitalizePipe, PluralPipe, RoundPipe, TimingPipe } from './pipes';
+import { CapitalizePipe, PluralPipe, RoundPipe, TimingPipe} from './pipes';
 import { MainLayoutComponent } from './layouts';
 import { DEFAULT_THEME } from './styles/theme.default';
 import { COSMIC_THEME } from './styles/theme.cosmic';
@@ -54,7 +55,7 @@ const COMPONENTS = [
   MainLayoutComponent
 ];
 
-const PIPES = [CapitalizePipe, PluralPipe, RoundPipe, TimingPipe];
+const PIPES = [CapitalizePipe, PluralPipe, RoundPipe, TimingPipe,FilterPipe];
 
 const NB_THEME_PROVIDERS = [
   ...NbThemeModule.forRoot(

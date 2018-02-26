@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup,Validators} from "@angular/forms";
 import { UserService } from '../../user.service';
 import { Router } from '@angular/router';
 import { Response } from '@angular/http';
+import { ItemsService } from '../items/items.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -15,7 +16,7 @@ export class LoginComponent implements OnInit {
     password:string = '';
     req:string = 'This field is required';
     failed:boolean;
-  constructor(private fb: FormBuilder,private userService:UserService,private router:Router) {
+  constructor(private fb: FormBuilder,private userService:UserService,private router:Router,private itemService:ItemsService) {
       this.logForm = fb.group({
           'username' : [null, Validators.required],
           'password' : [null, Validators.required],
@@ -35,6 +36,7 @@ export class LoginComponent implements OnInit {
             if(res.status===200){
                 this.router.navigate([['']]);
                 this.userService.user.token = res.json().data.tokens[0].token;
+                this.itemService.getItems();
             }
         },(err)=>{
             this.failed = true;
