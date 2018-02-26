@@ -1,0 +1,71 @@
+
+
+  <nb-card style="margin:5px">
+  <div *ngIf="!editMode">
+      <a class="" >
+          <div style="float:right;padding:10px;">
+              <p 
+              class="list-group-item-text lead" 
+              style="font-weight:bold">{{item.price}}$</p>
+            <button 
+            class="btn btn-sm btn-secondary" 
+            style="padding:10px;margin-bottom:5px"
+            (click)="onEdit()">
+              <i class="fa fa-edit" style="font-size:20px;"></i>
+            </button>
+            <br>
+            <button class="btn btn-sm btn-secondary" style="padding:10px;" (click)="onDelete()">
+                <i class="fa fa-trash" style="font-size:25px;"></i>
+            </button>
+          </div>
+          <div style="float:left;padding:20px;">
+          <h4 class="list-group-item-heading" style="">{{item.name}}
+          </h4>
+          <p class="list-group-item-text">Seller: {{item.sellerName}}</p>
+          <p class="list-group-item-text">Created: {{item.createdAt|date:'MM/dd/yyyy'}}</p>
+          <p class="list-group-item-text">Updated: {{item.updatedAt|date:'MM/dd/yyyy'}}</p>
+        </div>
+      </a>
+    </div> 
+  </nb-card>
+
+  <div *ngIf="editMode">
+  <nb-card style="margin:5px;">
+    <a class="" >
+      <div style="float:right;margin-top:50px;padding:10px" >
+        <button 
+          class="btn btn-sm btn-success" 
+          style="padding:10px;margin-bottom:5px"
+          (click)="onEditItem()">
+          <i class="fa fa-check" style="font-size:20px;"></i>
+        </button>
+        <br>
+        <button class="btn btn-sm btn-danger" style="padding:10px;padding-top:8px;padding-bottom:8px" (click)="onCancel()">
+        <i class="fa fa-times" style="font-size:25px;"></i>
+        </button>
+      </div>
+      <div style="padding:20px;">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label for="name" style="font-weight:600">Name</label>
+              <input [(ngModel)]="name" style="padding:5px;font-size:18px;"
+                type="text" id="name" class="form-control">
+            </div>
+          </div>
+        </div>
+    
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label
+                for="price" style="font-weight:600">Price</label>
+              <input [(ngModel)]="price" style="padding:5px;" step="50"
+                id="price" class="form-control" type="number">
+            </div>
+          </div>
+        </div>
+      </div>
+    </a>
+  </nb-card>
+</div> 
