@@ -19,6 +19,10 @@ const routes: Routes = [
         loadChildren: './items/items.module#ItemsModule'      
       },
       {
+        path:'allitems',
+        loadChildren : './allitems/allitems.module#AllItemsModule'
+      },
+      {
         path : 'login' , loadChildren : './login/login.module#LoginModule'
       },
       {

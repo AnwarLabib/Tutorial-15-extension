@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ItemsService } from './dashboard/items/items.service';
 import { UserService } from './user.service';
+import { AllItemsService } from './dashboard/allitems/allitems.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,6 +22,6 @@ import { UserService } from './user.service';
     AppRoutingModule
   ],
   bootstrap: [AppComponent],
-  providers: [{ provide: APP_BASE_HREF, useValue: '/' },ItemsService,UserService]
+  providers: [{ provide: APP_BASE_HREF, useValue: '/' },ItemsService,UserService,AllItemsService]
 })
 export class AppModule {}
