@@ -61,7 +61,9 @@ export class RegisterComponent implements OnInit {
                 this.cpassword=register.cpassword;
         }
     },(err)=>{
-        console.log(err);
+        this.username=register.username;
+        this.password=register.password;
+        this.cpassword=register.cpassword;
     });
     }
 
