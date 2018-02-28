@@ -19,7 +19,10 @@ export class AllItemsService implements OnInit{
     }
 
     itemSubject = new Subject();
+
+    cartSubject = new Subject();
     
+    cartItems:Item[];
 
     items: Item[];
 
@@ -85,6 +88,48 @@ export class AllItemsService implements OnInit{
             });
     }
 
+    addToCart(item:Item){
+        console.log(item._id);
+        console.log(this.userService.user.token);
+        const headers = new Headers({'x-auth':this.userService.user.token});
+        this.http.patch(`http://localhost:3000/api/product/addToCart/${item._id}`,{
+            headers: headers
+            })
+        .subscribe((res:Response)=>{
+            this.getCart();
+        },(err:any)=>{
+            console.log(err);     
 
+        });
+    }
 
+    removeFromCart(item:Item){
+
+        var _id = item._id;
+
+        this.http.delete(`http://localhost:3000/api/product/removeFromCart/${_id}`,{
+            headers:new Headers({
+                'x-auth':this.userService.user.token
+            })
+        })
+        .subscribe((res:Response)=>{
+            this.getCart();
+        },(err:any)=>{
+            console.log(err);     
+
+        });
+    }
+
+    getCart(){
+        this.http.get(`http://localhost:3000/api/product/getCart`)
+        .subscribe((res:Response)=>{
+            this.cartItems = res.json().data;
+            this.cartSubject.next(this.cartItems.slice());
+        },(err:any)=>{
+            this.cartItems = [];
+            this.cartSubject.next(this.cartItems.slice());        
+
+        });
+    }
+    
 }

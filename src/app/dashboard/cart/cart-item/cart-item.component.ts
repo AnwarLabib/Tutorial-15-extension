@@ -1,14 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { Input } from '@angular/core';
-import { AllItemsService } from '../allitems.service';
+import { Component, OnInit, Input } from '@angular/core';
 import { Item } from '../../items/item.model';
+import { AllItemsService } from '../../allitems/allitems.service';
 
 @Component({
-  selector: 'app-allitem',
-  templateUrl: './allitem.component.html',
-  styleUrls: ['./allitem.component.scss']
+  selector: 'app-cart-item',
+  templateUrl: './cart-item.component.html',
+  styleUrls: ['./cart-item.component.scss']
 })
-export class AllItemComponent implements OnInit {
+export class CartItemComponent implements OnInit {
 
   @Input() item:Item;
 
@@ -17,7 +16,6 @@ export class AllItemComponent implements OnInit {
   sellerName;
   created;
   updated;
-  addMode=true
   constructor(private itemService: AllItemsService){}
 
 
@@ -31,14 +29,11 @@ export class AllItemComponent implements OnInit {
     // this.updated = ""+this.item.updated.getDate()+"/"+this.item.updated.getMonth()+"/"+this.item.updated.getFullYear();
   }
 
-  addToCart(){
-    this.itemService.addToCart(this.item);
-    this.addMode = false;
-  }
 
   removeFromCart(){
     this.itemService.removeFromCart(this.item);
-    this.addMode = true;
   }
 
 }
+
+

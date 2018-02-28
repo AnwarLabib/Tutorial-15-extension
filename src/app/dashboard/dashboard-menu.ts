@@ -15,6 +15,6 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'ShoppingCart',
     icon: 'fa fa-shopping-cart',
-    link: '/dashboard'
+    link: '/dashboard/shopping-cart'
   }
 ];

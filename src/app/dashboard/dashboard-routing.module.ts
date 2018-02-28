@@ -27,6 +27,9 @@ const routes: Routes = [
       },
       {
         path : 'register' , loadChildren : './register/register.module#RegisterModule'
+      },
+      {
+        path : 'shopping-cart' , loadChildren : './cart/cart.module#CartModule'
       }
 
     ]

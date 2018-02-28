@@ -1,0 +1,9 @@
+<div class="row">
+  <div class="col-md-10" style="padding-right:0px">
+      <input type="text" [(ngModel)]="filteredStatus" placeholder="Search by Name" class="form-control"/>
+  </div>
+</div>
+
+<hr/>
+
+<app-cart-item *ngFor="let item of items | async | filter:filteredStatus:'name'" [item]="item"></app-cart-item>
