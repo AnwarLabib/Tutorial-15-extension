@@ -1,0 +1,34 @@
+
+
+  <nb-card style="margin:5px">
+  <div>
+      <a class="" >
+          <div style="float:right;padding:10px;">
+              <p 
+              class="list-group-item-text lead" 
+              style="font-weight:bold">{{item.price}}$</p>
+            <button *ngIf = "addMode"
+            class="btn btn-sm btn-success" 
+            style="padding:10px;margin-bottom:5px"
+            (click)="addToCart()">
+              <i class="fa fa-plus" style="font-size:20px;"></i>
+            </button>
+
+            <button *ngIf = "!addMode"
+            class="btn btn-sm btn-danger" 
+            style="padding:10px;margin-bottom:5px"
+            (click)="removeFromCart()">
+              <i class="fa fa-trash" style="font-size:20px;"></i>
+            </button>
+
+          </div>
+          <div style="float:left;padding:20px;">
+          <h4 class="list-group-item-heading">{{item.name}}
+          </h4>
+          <p class="list-group-item-text">Seller: {{item.sellerName}}</p>
+          <p class="list-group-item-text">Created: {{item.createdAt|date:'MM/dd/yyyy'}}</p>
+          <p class="list-group-item-text">Updated: {{item.updatedAt|date:'MM/dd/yyyy'}}</p>
+        </div>
+      </a>
+    </div> 
+  </nb-card>

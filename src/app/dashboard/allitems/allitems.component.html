@@ -1,0 +1,54 @@
+    <div class="row">
+        <div class="col-md-10" style="padding-right:0px">
+            <input type="text" [(ngModel)]="filteredStatus" placeholder="Search by Name" class="form-control"/>
+        </div>
+        <div class="offset-md-1 col-md-1">
+            <button *ngIf="!addMode" class="btn btn-success" style="float:right;font-weight:bolder" (click)="onAdd()">ADD Item</button>
+            <button *ngIf="addMode" class="btn btn-danger" style="float:right;font-weight:bolder" (click)="onCancel()">Cancel</button>
+        </div>
+    </div>
+    <div *ngIf="addMode">
+        <nb-card style="margin-top:10px">
+            <nb-card-header>
+                Add new Item
+            </nb-card-header>
+            <nb-card-body>
+                <div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                              <label for="name" style="font-weight:600">Name</label>
+                              <input [(ngModel)]="name" style="padding:5px;font-size:18px;"
+                                  type="text" id="name" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                        
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                              <label
+                                for="price" style="font-weight:600">Price</label>
+                              <input [(ngModel)]="price" style="padding:5px;" step="50"
+                                id="price" class="form-control" type="number">
+                            </div>
+                        </div>
+                     </div>
+                     <button class="btn btn-success btn-block" (click)="addItem()">ADD ITEM</button>
+                  </div>            
+            </nb-card-body>
+        </nb-card>
+    </div>
+    
+    <nb-card *ngIf="added"style="margin-top:10px">
+        <nb-card-header style="color:#3c763d">
+            <button 
+            style="float:right;color:#3c763d;font-weight:bolder" 
+            type="button" class="close" (click)="toggleAlertOff()">x</button>
+            <strong style="float:left">Item has been sucessfully added!</strong> 
+        </nb-card-header>
+    </nb-card>
+    
+    <hr/>
+    
+    <app-allitem *ngFor="let item of items | async | filter:filteredStatus:'name'" [item]="item"></app-allitem>
