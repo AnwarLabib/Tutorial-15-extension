@@ -1,9 +1,17 @@
 <div class="row">
-  <div class="col-md-10" style="padding-right:0px">
+  <div class="col-md-9" style="padding-right:0px">
       <input type="text" [(ngModel)]="filteredStatus" placeholder="Search by Name" class="form-control"/>
+  </div>
+  <div class="col-md-3">
+    <button (click)="checkout()" class="btn btn-primary">Proceed to checkout</button>
   </div>
 </div>
 
 <hr/>
-
-<app-cart-item *ngFor="let item of items | async | filter:filteredStatus:'name'" [item]="item"></app-cart-item>
+<div *ngIf="!empty; else emptyCart">
+  <app-cart-item *ngFor="let item of items | async | filter:filteredStatus:'name'" [item]="item"></app-cart-item>
+</div>
+<ng-template #emptyCart>
+  <div *ngIf="checkedOut"> Your total is {{total | currency}}!</div>
+  <div *ngIf="!checkedOut"> Your cart is empty </div>
+</ng-template>

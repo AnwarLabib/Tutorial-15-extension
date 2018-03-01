@@ -10,10 +10,10 @@ import { Item } from "../items/item.model";
 
 @Injectable()
 export class AllItemsService implements OnInit{
-    
-    constructor(private http:Http,private userService:UserService){        
+
+    constructor(private http:Http,private userService:UserService){
     }
-    
+
     ngOnInit(){
         this.getItems();
     }
@@ -21,7 +21,7 @@ export class AllItemsService implements OnInit{
     itemSubject = new Subject();
 
     cartSubject = new Subject();
-    
+
     cartItems:Item[];
 
     items: Item[];
@@ -44,12 +44,12 @@ export class AllItemsService implements OnInit{
         .subscribe((res: Response)=>{
             this.getItems();
         });
-    
+
     }
 
     editItem(id:number,updatedItem:Item){
         var index = this.findIndexById(updatedItem);
-        
+
         // this.items[index] = updatedItem;
         // this.itemSubject.next(this.items.slice());
         const headers = new Headers({'x-auth':this.userService.user.token});
@@ -69,11 +69,11 @@ export class AllItemsService implements OnInit{
 
         this.http.post('http://localhost:3000/api/product/createProduct',item,{headers:headers})
         .subscribe((res: Response)=>{
-            this.getItems();            
+            this.getItems();
         },(err)=>{
             console.log(err);
         });
-        
+
     }
 
     getItems(){
@@ -83,7 +83,7 @@ export class AllItemsService implements OnInit{
                 this.itemSubject.next(this.items.slice());
             },(err:any)=>{
                 this.items = [];
-                this.itemSubject.next(this.items.slice());        
+                this.itemSubject.next(this.items.slice());
 
             });
     }
@@ -92,7 +92,7 @@ export class AllItemsService implements OnInit{
         console.log(item._id);
         console.log(this.userService.user.token);
         const headers = new Headers({'x-auth':this.userService.user.token});
-       this.http.post(`http://localhost:3000/api/product/addToCart/${item._id}`,{
+       this.http.patch(`http://localhost:3000/api/product/addToCart/${item._id}`,{
            headers:new Headers({
                'x-auth': this.userService.user.token
            })
@@ -100,7 +100,7 @@ export class AllItemsService implements OnInit{
         .subscribe((res:Response)=>{
             this.getCart();
         },(err:any)=>{
-            console.log(err);     
+            console.log(err);
 
         });
     }
@@ -117,7 +117,7 @@ export class AllItemsService implements OnInit{
         .subscribe((res:Response)=>{
             this.getCart();
         },(err:any)=>{
-            console.log(err);     
+            console.log(err);
 
         });
     }
@@ -133,9 +133,9 @@ export class AllItemsService implements OnInit{
             this.cartSubject.next(this.cartItems.slice());
         },(err:any)=>{
             this.cartItems = [];
-            this.cartSubject.next(this.cartItems.slice());        
+            this.cartSubject.next(this.cartItems.slice());
 
         });
     }
-    
+
 }

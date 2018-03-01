@@ -37,6 +37,7 @@ export class AllItemComponent implements OnInit {
   }
 
   removeFromCart(){
+    console.log("test");
     this.itemService.removeFromCart(this.item);
     this.addMode = true;
   }
