@@ -92,9 +92,11 @@ export class AllItemsService implements OnInit{
         console.log(item._id);
         console.log(this.userService.user.token);
         const headers = new Headers({'x-auth':this.userService.user.token});
-        this.http.patch(`http://localhost:3000/api/product/addToCart/${item._id}`,{
-            headers: headers
-            })
+       this.http.post(`http://localhost:3000/api/product/addToCart/${item._id}`,{
+           headers:new Headers({
+               'x-auth': this.userService.user.token
+           })
+       })
         .subscribe((res:Response)=>{
             this.getCart();
         },(err:any)=>{
@@ -121,7 +123,11 @@ export class AllItemsService implements OnInit{
     }
 
     getCart(){
-        this.http.get(`http://localhost:3000/api/product/getCart`)
+        this.http.get(`http://localhost:3000/api/product/getCart`,{
+            headers:new Headers({
+                'x-auth':this.userService.user.token
+            })
+        })
         .subscribe((res:Response)=>{
             this.cartItems = res.json().data;
             this.cartSubject.next(this.cartItems.slice());

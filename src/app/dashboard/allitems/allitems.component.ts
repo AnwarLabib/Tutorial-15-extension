@@ -5,6 +5,7 @@ import { Observable } from 'rxjs/Rx';
 import { UserService } from '../../user.service';
 import { User } from '../../user.model';
 import { Item } from '../items/item.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard-allitems',
@@ -19,22 +20,29 @@ export class AllItemsComponent {
   price;
   added = false;
   user:any = false;
-  constructor(private itemService: AllItemsService,private userService:UserService){}
+  constructor(private itemService: AllItemsService,private userService:UserService,private router:Router){}
   
 
   ngOnInit(){
-    this.itemService.getItems();
-    if(this.userService.user!=null){
-      this.user = true;
+    if(this.userService.user)
+    {
+      this.itemService.getItems();
+      if(this.userService.user!=null){
+        this.user = true;
 
+      }
+
+        this.items = Observable.of(this.itemService.items);
+      this.itemService.itemSubject.subscribe(
+        (items: Item[]) =>{
+          this.items = Observable.of(items);
+        }
+      );
+    }
+    else{
+      this.router.navigate(['..']);
     }
 
-      this.items = Observable.of(this.itemService.items);
-    this.itemService.itemSubject.subscribe(
-      (items: Item[]) =>{
-        this.items = Observable.of(items);
-      }
-    );
   }
 
   onAdd(){

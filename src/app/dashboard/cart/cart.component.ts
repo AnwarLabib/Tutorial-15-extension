@@ -5,6 +5,7 @@ import { UserService } from '../../user.service';
 import { User } from '../../user.model';
 import { Item } from '../items/item.model';
 import { AllItemsService } from '../allitems/allitems.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -21,21 +22,27 @@ export class CartComponent implements OnInit {
   added = false;
   user:any = false;
   
-  constructor(private itemService: AllItemsService,private userService:UserService){}
+  constructor(private itemService: AllItemsService,private userService:UserService, private router:Router){}
   
 
   ngOnInit(){
-    this.itemService.getCart();
-    if(this.userService.user!=null){
-      this.user = true;
+    if(this.userService.user!=null)
+    {
+      this.itemService.getCart();
+      if(this.userService.user!=null){
+        this.user = true;
 
-    }
-
-    this.items = Observable.of(this.itemService.cartItems);
-    this.itemService.cartSubject.subscribe(
-      (items: Item[]) =>{
-        this.items = Observable.of(items);
       }
-    );
+
+      this.items = Observable.of(this.itemService.cartItems);
+      this.itemService.cartSubject.subscribe(
+        (items: Item[]) =>{
+          this.items = Observable.of(items);
+        }
+      );
+    }
+    else{
+      this.router.navigate['..'];
+    }
   }
 }

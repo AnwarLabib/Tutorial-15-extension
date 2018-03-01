@@ -1,8 +1,16 @@
     <div class="row">
         <div class="col-md-10" style="padding-right:0px">
-            <input type="text" [(ngModel)]="filteredStatus" placeholder="Search by Name" class="form-control"/>
+            <input type="text" list="components" [(ngModel)]="filteredStatus" placeholder="Search By Component" class="form-control"/>
+            
+            <datalist id="components">
+                <option value="component1">
+                <option value="component2">
+                <option value="component3">
+                <option value="component4">
+                <option value="component5">
+              </datalist>
         </div>
         <div class="offset-md-1 col-md-1">
         </div>
     </div>  
-    <app-allitem *ngFor="let item of items | async | filter:filteredStatus:'name'" [item]="item"></app-allitem>
+    <app-allitem *ngFor="let item of items | async | componentsfilter:filteredStatus" [item]="item"></app-allitem>

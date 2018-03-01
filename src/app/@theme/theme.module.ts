@@ -29,6 +29,7 @@ import { MainLayoutComponent } from './layouts';
 import { DEFAULT_THEME } from './styles/theme.default';
 import { COSMIC_THEME } from './styles/theme.cosmic';
 import { RouterModule } from '@angular/router';
+import { ComponentsPipe } from './pipes/components.pipe';
 
 const BASE_MODULES = [CommonModule,RouterModule];
 
@@ -55,7 +56,7 @@ const COMPONENTS = [
   MainLayoutComponent
 ];
 
-const PIPES = [CapitalizePipe, PluralPipe, RoundPipe, TimingPipe,FilterPipe];
+const PIPES = [CapitalizePipe, PluralPipe, RoundPipe, TimingPipe,FilterPipe,ComponentsPipe];
 
 const NB_THEME_PROVIDERS = [
   ...NbThemeModule.forRoot(
