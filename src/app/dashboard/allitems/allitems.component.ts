@@ -26,24 +26,23 @@ export class AllItemsComponent {
   ngOnInit(){
     if(this.userService.user)
     {
+      this.user = true;
+      
+    }
+    
       this.itemService.getItems();
-      if(this.userService.user!=null){
-        this.user = true;
-
-      }
-
-        this.items = Observable.of(this.itemService.items);
+      this.items = Observable.of(this.itemService.items);
       this.itemService.itemSubject.subscribe(
         (items: Item[]) =>{
           this.items = Observable.of(items);
         }
       );
     }
-    else{
-      this.router.navigate(['..']);
-    }
+    // else{
+    //   this.router.navigate(['..']);
+    // }
 
-  }
+  
 
   onAdd(){
     this.addMode = true;

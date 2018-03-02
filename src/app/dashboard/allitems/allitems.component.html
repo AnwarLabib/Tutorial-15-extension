@@ -13,4 +13,5 @@
         <div class="offset-md-1 col-md-1">
         </div>
     </div>  
+    <hr>
     <app-allitem *ngFor="let item of items | async | componentsfilter:filteredStatus" [item]="item"></app-allitem>

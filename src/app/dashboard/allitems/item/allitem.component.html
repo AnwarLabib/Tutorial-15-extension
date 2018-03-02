@@ -7,14 +7,14 @@
               <p 
               class="list-group-item-text lead" 
               style="font-weight:bold">{{item.price}}$</p>
-            <button *ngIf = "addMode"
+            <button *ngIf = "!addMode && user"
             class="btn btn-sm btn-success" 
             style="padding:10px;margin-bottom:5px"
             (click)="addToCart()">
               <i class="fa fa-plus" style="font-size:20px;"></i>
             </button>
 
-            <button *ngIf = "!addMode"
+            <button *ngIf = "addMode && user"
             class="btn btn-sm btn-danger" 
             style="padding:10px;margin-bottom:5px"
             (click)="removeFromCart()">

@@ -15,7 +15,8 @@ export class AllItemsService implements OnInit{
     }
 
     ngOnInit(){
-        this.getItems();
+        this.getCart();
+        // this.getItems();
     }
 
     itemSubject = new Subject();
@@ -82,21 +83,16 @@ export class AllItemsService implements OnInit{
                 this.items = res.json().data;
                 this.itemSubject.next(this.items.slice());
             },(err:any)=>{
-                this.items = [];
-                this.itemSubject.next(this.items.slice());
-
+                console.log(err);
             });
     }
 
     addToCart(item:Item){
         const headers = new Headers({'x-auth':this.userService.user.token});
-       this.http.patch(`http://localhost:3000/api/product/addToCart/${item._id}`,item,{
-           headers:new Headers({
-               'x-auth': this.userService.user.token
-           })
-       })
+       this.http.patch(`http://localhost:3000/api/product/addToCart/${item._id}`,{},{headers:headers})
         .subscribe((res:Response)=>{
             this.getCart();
+            this.itemSubject.next(this.items.slice());
         },(err:any)=>{
             console.log(err);
 
@@ -114,6 +110,7 @@ export class AllItemsService implements OnInit{
         })
         .subscribe((res:Response)=>{
             this.getCart();
+            this.itemSubject.next(this.items.slice());
         },(err:any)=>{
             console.log(err);
 
@@ -130,9 +127,7 @@ export class AllItemsService implements OnInit{
             this.cartItems = res.json().data;
             this.cartSubject.next(this.cartItems.slice());
         },(err:any)=>{
-            this.cartItems = [];
-            this.cartSubject.next(this.cartItems.slice());
-
+            console.log(err);
         });
     }
     clearCart() {
