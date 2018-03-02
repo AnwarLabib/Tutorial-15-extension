@@ -14,7 +14,7 @@ export class ComponentsPipe implements PipeTransform {
     if(searchText === 'c1' || searchText === 'component1' ){
         return items.filter((item:Item)=>{
 
-            return (item.sellerName.includes('Zeyad') || item.sellerName.includes('Badreldin')|| item.sellerName.includes('Fady')|| item.sellerName.includes('Doaa')|| item.sellerName.includes('Anwar'));
+            return (item.sellerName.includes('zeyad') || item.sellerName.includes('badreldin')|| item.sellerName.includes('fady')|| item.sellerName.includes('doaa')|| item.sellerName.includes('anwar'));
     
          });
     }
@@ -22,14 +22,14 @@ export class ComponentsPipe implements PipeTransform {
     else if(searchText === 'c2' || searchText === 'component2' ){
         return items.filter((item:Item)=>{            
                
-            return (item.sellerName.includes('Mohamed') || item.sellerName.includes('Youssef')|| item.sellerName.includes('Mariz')|| item.sellerName.includes('Mostafa')|| item.sellerName.includes('Maggie'));
+            return (item.sellerName.includes('mohamed') || item.sellerName.includes('youssef')|| item.sellerName.includes('mariz')|| item.sellerName.includes('mostafa')|| item.sellerName.includes('maggie'));
         
          });
     }
     else if(searchText === 'c3' || searchText === 'component3' ){
         return items.filter((item:Item)=>{            
                
-            return (item.sellerName.includes('Ahmed Gamal') || item.sellerName.includes('Marwan Sami')|| item.sellerName.includes('Amr')|| item.sellerName.includes('Omar')|| item.sellerName.includes('Bishoy'));
+            return (item.sellerName.includes('ahmed gamal') || item.sellerName.includes('marwan sami')|| item.sellerName.includes('amr')|| item.sellerName.includes('omar')|| item.sellerName.includes('bishoy'));
         
          });
     }
@@ -38,7 +38,7 @@ export class ComponentsPipe implements PipeTransform {
         console.log('c4');
         return items.filter((item:Item)=>{            
              
-            return (item.sellerName.includes('abdo') || item.sellerName.includes('Abdelrahman Tarek') || item.sellerName.includes('Peter')|| item.sellerName.includes('Ahmed Samir')|| item.sellerName.includes('Daniel')|| item.sellerName.includes('Marwan Mohamed'));
+            return (item.sellerName.includes('abdo') || item.sellerName.includes('abdelrahman tarek') || item.sellerName.includes('peter')|| item.sellerName.includes('ahmed samir')|| item.sellerName.includes('daniel')|| item.sellerName.includes('marwan Mohamed'));
         
          });
     }
@@ -46,7 +46,7 @@ export class ComponentsPipe implements PipeTransform {
     else if(searchText === 'c5' || searchText === 'component5' ){
         return items.filter((item:Item)=>{            
                
-            return (item.sellerName.includes('Shadi') || item.sellerName.includes('Abdelrahman Ayman')|| item.sellerName.includes('Aya')|| item.sellerName.includes('Abdelaziz'));
+            return (item.sellerName.includes('shadi') || item.sellerName.includes('abdelrahman ayman')|| item.sellerName.includes('aya')|| item.sellerName.includes('abdelaziz'));
         
          });
     }

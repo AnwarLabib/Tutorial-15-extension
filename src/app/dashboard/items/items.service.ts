@@ -74,7 +74,6 @@ export class ItemsService implements OnInit{
     }
 
     getItems(){
-            console.log(this.userService.user);
             const headers = new Headers({'x-auth':this.userService.user.token});
             this.http.get('http://localhost:3000/api/product/getProducts',{headers:headers})
             .subscribe((res:Response)=>{

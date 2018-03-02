@@ -1,17 +1,33 @@
-<div class="row">
-  <div class="col-md-9" style="padding-right:0px">
-      <input type="text" [(ngModel)]="filteredStatus" placeholder="Search by Name" class="form-control"/>
+<div *ngIf='user'>
+  <div class="row">
+    <div class="col-md-9" style="padding-right:0px">
+        <input type="text" [(ngModel)]="filteredStatus" placeholder="Search by Name" class="form-control"/>
+    </div>
+    <div class="col-md-3">
+      <button (click)="checkout()" class="btn btn-primary">Proceed to checkout</button>
+    </div>
   </div>
-  <div class="col-md-3">
-    <button (click)="checkout()" class="btn btn-primary">Proceed to checkout</button>
+  
+  <hr/>
+  <div *ngIf="!empty; else emptyCart">
+    <app-cart-item *ngFor="let item of items | async | filter:filteredStatus:'name'" [item]="item"></app-cart-item>
   </div>
+  <ng-template #emptyCart>
+    <div *ngIf="checkedOut">
+       <h4>
+         Your products are on their way and the fees are withdrawn from your Visa
+      </h4>
+      <br>
+      <h4>
+        Your total is {{total | currency}}!
+      </h4>  
+      </div>
+    <div *ngIf="!checkedOut"> Your cart is empty </div>
+  </ng-template>
 </div>
 
-<hr/>
-<div *ngIf="!empty; else emptyCart">
-  <app-cart-item *ngFor="let item of items | async | filter:filteredStatus:'name'" [item]="item"></app-cart-item>
+<div *ngIf='!user'>
+    <h1>
+        Please Log in to view your Shopping Cart.
+    </h1>
 </div>
-<ng-template #emptyCart>
-  <div *ngIf="checkedOut"> Your total is {{total | currency}}!</div>
-  <div *ngIf="!checkedOut"> Your cart is empty </div>
-</ng-template>

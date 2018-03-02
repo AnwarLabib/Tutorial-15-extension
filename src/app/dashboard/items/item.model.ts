@@ -5,6 +5,7 @@ export class Item{
     public createdAt: Date;
     public updatedAt: Date;
     public sellerName: string;
+    public addedInCarts?: arrayId[];
   constructor(id:number, name:string, price:number, createdAt:Date,updatedAt:Date,sellerName:string)
   {
     this._id=id;
@@ -14,4 +15,8 @@ export class Item{
     this.updatedAt = updatedAt;
     this.sellerName = sellerName;
   }
+}
+
+export interface arrayId{
+  _id: string[];
 }
