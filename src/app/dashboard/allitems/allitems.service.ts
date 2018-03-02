@@ -137,5 +137,18 @@ export class AllItemsService implements OnInit{
 
         });
     }
+    clearCart() {
+      this.http.delete(`http://localhost:3000/api/product/clearCart`,{
+          headers:new Headers({
+              'x-auth':this.userService.user.token
+          })
+      })
+      .subscribe((res:Response)=>{
+          this.getCart();
+      },(err:any)=>{
+          console.log(err);
+
+      });
+    }
 
 }

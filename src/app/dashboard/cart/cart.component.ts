@@ -56,10 +56,9 @@ export class CartComponent implements OnInit {
     this.items.forEach((element) => {
       element.forEach((item) => {
         total += item.price;
-        this.itemService.removeFromCart(item);
-        console.log(i++);
       })
     });
+    this.itemService.clearCart();
     this.total = total;
     this.checkedOut = true;
   }
