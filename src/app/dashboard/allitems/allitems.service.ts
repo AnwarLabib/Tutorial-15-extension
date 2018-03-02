@@ -89,10 +89,8 @@ export class AllItemsService implements OnInit{
     }
 
     addToCart(item:Item){
-        console.log(item._id);
-        console.log(this.userService.user.token);
         const headers = new Headers({'x-auth':this.userService.user.token});
-       this.http.patch(`http://localhost:3000/api/product/addToCart/${item._id}`,{
+       this.http.patch(`http://localhost:3000/api/product/addToCart/${item._id}`,item,{
            headers:new Headers({
                'x-auth': this.userService.user.token
            })
